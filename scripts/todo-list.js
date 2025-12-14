@@ -1,13 +1,22 @@
-let tasks = [];
+const t_init = localStorage.getItem('tasks');
+let tasks = t_init ? JSON.parse(t_init) : [];
+renderTasks();
 
 document.querySelector('.js-add-button').addEventListener('click', () => {
   const input = document.querySelector('.js-input-bar');
+  const val = input.value;
+  const dueDate = (document.querySelector('.js-due-date-input')).value;
   if(input.value.trim() !== '') {
-    tasks.push(input.value);
+    tasks.push({
+      val,
+      dueDate
+    });
     input.value = ``;
+    document.querySelector('.js-due-date-input').value = ``;
     
     renderTasks();
   }
+
 });
 
 function renderTasks() {
@@ -18,7 +27,10 @@ function renderTasks() {
       taskListElem.innerHTML += `
       <div class="task-div">
         <div class="task-name-div">
-          <p class="task">${task}</p>
+          <p class="task">${task.val}</p>
+        </div>
+        <div class="due-date-div">
+          <p class="date">${task.dueDate}</p>
         </div>
         <div class="task-button-div">
           <button class="delete-button js-delete-button" data-index="${index}"        >Delete</button>
@@ -28,6 +40,7 @@ function renderTasks() {
       `;
     }
   );
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 document.querySelector('.js-show-task-div').addEventListener('click', (event) => {

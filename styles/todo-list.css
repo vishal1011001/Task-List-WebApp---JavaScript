@@ -1,0 +1,106 @@
+body {
+  background-image: url("images/rm184-aum-06e.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: darkslategray;
+}
+
+.header { 
+  color: white;
+  font-family: Arial;
+  font-size: 50px;
+}
+
+.add-task-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+}
+
+.main {
+  width: 600px;
+  box-shadow: 0px 0px 5px  gray;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.input-bar {
+  padding: 5px 15px;
+  width: 83%;
+  border: none;
+  outline: none;
+
+  font-size: 20px;
+}
+
+
+.add-button {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+  color: white;
+  margin-right: 3px;
+  border-radius: 10px;
+  border: none;
+  padding: 6px 20px;
+  background-color: rgb(63, 63, 63);
+  transition: opacity 0.15s , background-color 0.15s;
+}
+.add-button:hover {
+  opacity: 0.9;
+}
+.add-button:active {
+  background-color: rgb(39, 39, 39);
+}
+
+/* .show-task-div:active {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px;
+  box-shadow: 0px 0px 5px gray;
+  border-radius: 10px;
+} */
+
+.task-div {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 4px;
+}
+
+.task-name-div {
+  display: flex;
+  width: 84%;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: Arial;
+  padding-left: 15px;
+
+}
+
+.task-button-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.delete-button,
+.done-button {
+  background-color: rgb(193, 0, 0);
+  color: white;
+  border: none;
+  font-size: 20px;
+  margin: 4px;
+  border-radius: 5px;
+}
+
+/* .done-button {
+  background-color: rgb(17, 209, 0);
+} */

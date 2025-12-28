@@ -2,7 +2,7 @@ const t_init = localStorage.getItem('tasks');
 let tasks = t_init ? JSON.parse(t_init) : [];
 renderTasks();
 
-document.querySelector('.js-add-button').addEventListener('click', () => {
+function saveTask() {
   const input = document.querySelector('.js-input-bar');
   const val = input.value;
   const dueDate = (document.querySelector('.js-due-date-input')).value;
@@ -16,7 +16,14 @@ document.querySelector('.js-add-button').addEventListener('click', () => {
     
     renderTasks();
   }
+}
 
+document.querySelector('.js-add-button').addEventListener('click', () => {
+  saveTask();
+});
+
+document.querySelector('.js-input-bar').addEventListener('keydown', (event) => {
+  if(event.key === 'Enter') saveTask();
 });
 
 function renderTasks() {

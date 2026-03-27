@@ -76,6 +76,8 @@ body {
   padding: 4px 4px;
 }
 
+
+
 .task-name-div {
   display: flex;
   width: 74%;
@@ -83,6 +85,11 @@ body {
   font-size: 20px;
   font-family: Arial;
   padding-left: 15px;
+}
+
+.task.done {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .due-date-div {
@@ -106,6 +113,11 @@ body {
   font-size: 20px;
   margin: 4px;
   border-radius: 5px;
+}
+
+.done-button {
+  background-color: green;
+  padding: 10px 14px;
 }
 
 /* .done-button {

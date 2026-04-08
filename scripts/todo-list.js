@@ -42,7 +42,7 @@ function renderTasks() {
           <p class="task ${task.isDone ? 'done' : 'not-done'}">${task.val}</p>
         </div>
         <div class="due-date-div">
-          <p class="date">${task.dueDate}</p>
+          <p class="date ${task.isDone ? 'done' : 'not-done'}">${task.dueDate}</p>
         </div>
         <div class="task-button-div">
           <button class="done-button js-done-button" data-index="${index}">Done</button>
